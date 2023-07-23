@@ -1,17 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <header>
+      <img src="./assets/icon-256x256.avif" alt="Logo" class="logo" />
+      <router-link to="/"
+        ><button class="home-button">Inicio</button></router-link
+      >
+    </header>
+    <UserList />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import UserList from "./components/UserList.vue";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    UserList,
+  },
+};
 </script>
 
 <style>
@@ -20,7 +26,29 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+/* Estilos del logotipo y del botón */
+.logo {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  display: block;
+}
+
+.home-button {
+  position: absolute;
+  top: 35px;
+  right: 30px;
+  padding: 10px 20px;
+  background-color: #008cff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
 }
 </style>

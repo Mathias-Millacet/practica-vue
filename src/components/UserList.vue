@@ -21,7 +21,8 @@ export default {
   async mounted() {
     try {
       const response = await axios.get("https://dummyjson.com/users");
-      this.users = response.data;
+      this.users = response.data.users;
+      console.log('response.data :>> ', response.data);
     } catch (error) {
       console.error("Error al cargar la lista de usuarios:", error);
     }
